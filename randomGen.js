@@ -25,7 +25,7 @@ function setRandomPass(){
     document.getElementById('random-pass').innerText = password;
 }
 
-document.getElementById('generate').addEventListener('click', setRandomName);
-document.getElementById('generate').addEventListener('click', setRandomPass);
+setRandomName;
+setRandomPass;
 document.getElementById('username').innerHTML = username
 document.getElementById("password").innerHTML = password
