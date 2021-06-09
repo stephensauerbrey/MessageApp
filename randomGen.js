@@ -1,22 +1,31 @@
-const firstNames = ["Red","Orange","Green","Yellow","Black","Golden","Aqua","Navy","Silver","Teal","Purple","Brown"];
-const secondNames = ["Penguin", "Dog", "Zebra","Cat","Tiger", "Fox", "Bear","Moose","Lion", "Panda", "Deer","Fish"];
+const firstNames = ["Red", "Orange", "Green", "Yellow", "Black", "Golden", "Aqua", "Navy", "Silver", "Teal", "Purple", "Brown"];
+const secondNames = ["Penguin", "Dog", "Zebra", "Cat", "Tiger", "Fox", "Bear", "Moose", "Lion", "Panda", "Deer", "Fish"];
+const Pass1 = ["Bald", "Attractive", "Chubby", "Fit", "Elegant", "Plain", "Worried", "Tiny", "Fat", "Big", "Huge", "Flabby", "Depressed", "Unlucky", "Happy", "Sad", "Scruffy", "Obedient", "Silly", "Wonderful"];
 
-const getRandomNumber = (max) => Math.floor(Math.random() * (max));
+var password = getRandomPass()
+var username = getRandomName()
 
-const getRandomName = () => `${firstNames[getRandomNumber(firstNames.length)]}${secondNames[getRandomNumber(secondNames.length)]}`;
+function getRandomNumber(max) {
+    return Math.floor(Math.random() * (max));
+}
 
-const setRandomName = () => {document.getElementById('random-name').innerText = getRandomName(); }
+function getRandomName() {
+    return `${firstNames[getRandomNumber(firstNames.length)]}${secondNames[getRandomNumber(secondNames.length)]}`
+}
+
+function getRandomPass() {
+   return `${Pass1[getRandomNumber(Pass1.length)]}${"Drew"}`
+}
+
+function setRandomName() {
+    document.getElementById('random-name').innerText = username;
+}
+
+function setRandomPass(){
+    document.getElementById('random-pass').innerText = password;
+}
 
 document.getElementById('generate').addEventListener('click', setRandomName);
-
-setRandomName();
-
-const Pass1 = ["Bald","Attractive","Chubby","Fit","Elegant","Plain","Worried","Tiny","Fat","Big","Huge","Flabby","Depressed","Unlucky","Happy","Sad","Scruffy","Obedient","Silly","Wonderful"];
-
-const getRandomPass = () => `${Pass1[getRandomNumber(Pass1.length)]}${"Drew"}`;
-
-const setRandomPass = () => {document.getElementById('random-pass').innerText = getRandomPass(); }
-
 document.getElementById('generate').addEventListener('click', setRandomPass);
-
-setRandomPass();
+document.getElementById('username').innerHTML = username
+document.getElementById("password").innerHTML = password
