@@ -11,21 +11,28 @@ function getRandomNumber(max) {
 
 function getRandomName() {
     return `${firstNames[getRandomNumber(firstNames.length)]}${secondNames[getRandomNumber(secondNames.length)]}`
+    usernameList.push(username);
 }
 
 function getRandomPass() {
    return `${Pass1[getRandomNumber(Pass1.length)]}${"Drew"}`
+   passwordList.push(password);
 }
 
 function setRandomName() {
     document.getElementById('random-name').innerText = username;
+    
 }
 
 function setRandomPass(){
     document.getElementById('random-pass').innerText = password;
+    
 }
 
 setRandomName;
 setRandomPass;
 document.getElementById('username').innerHTML = username
 document.getElementById("password").innerHTML = password
+
+var usernameList = [];
+var passwordList = [];
